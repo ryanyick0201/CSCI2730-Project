@@ -1,0 +1,253 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "walletAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "password",
+				"type": "string"
+			}
+		],
+		"name": "ContractCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "policyNumber",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "walletAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "policyClass",
+				"type": "string"
+			}
+		],
+		"name": "PolicyClaimed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "policyNumber",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "walletAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "departureDate",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "departureTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "flightNumber",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint8",
+				"name": "numberOfPersons",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"internalType": "enum InsuranceContract.PolicyClass",
+				"name": "policyClass",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"internalType": "enum InsuranceContract.ClaimStatus",
+				"name": "claimStatus",
+				"type": "uint8"
+			}
+		],
+		"name": "PolicyCreated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "policyNumber",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isSmallDelay",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "isLargeDelay",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "isValidClaim",
+				"type": "bool"
+			}
+		],
+		"name": "claim",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "departureDate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "departureTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "flightNumber",
+				"type": "string"
+			},
+			{
+				"internalType": "uint8",
+				"name": "numberOfPersons",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum InsuranceContract.PolicyClass",
+				"name": "policyClass",
+				"type": "uint8"
+			}
+		],
+		"name": "createPolicy",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "injectMoney",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "policyNumber",
+				"type": "uint256"
+			}
+		],
+		"name": "viewPolicyByID",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum InsuranceContract.PolicyClass",
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum InsuranceContract.ClaimStatus",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "walletAddress",
+				"type": "address"
+			}
+		],
+		"name": "viewPolicyByWallet",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
