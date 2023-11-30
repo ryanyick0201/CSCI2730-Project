@@ -1,0 +1,123 @@
+[
+    {
+      "departureDate": 20220101,
+      "departureTime": 1200,
+      "airline": "CX730",
+      "delayTime": 500
+    },
+    {
+      "departureDate": 20220215,
+      "departureTime": 1430,
+      "airline": "AA123",
+      "delayTime": 200
+    },
+    {
+      "departureDate": 20220405,
+      "departureTime": 830,
+      "airline": "DL456",
+      "delayTime": 700
+    },
+    {
+      "departureDate": 20220620,
+      "departureTime": 1015,
+      "airline": "UA789",
+      "delayTime": 350
+    },
+    {
+      "departureDate": 20220910,
+      "departureTime": 1730,
+      "airline": "LH234",
+      "delayTime": 800
+    },
+    {
+      "departureDate": 20221105,
+      "departureTime": 945,
+      "airline": "EK567",
+      "delayTime": 300
+    },
+    {
+      "departureDate": 20221225,
+      "departureTime": 2030,
+      "airline": "SQ890",
+      "delayTime": 600
+    },
+    {
+      "departureDate": 20230214,
+      "departureTime": 1345,
+      "airline": "AF321",
+      "delayTime": 400
+    },
+    {
+      "departureDate": 20230401,
+      "departureTime": 800,
+      "airline": "BA456",
+      "delayTime": 250
+    },
+    {
+      "departureDate": 20231130,
+      "departureTime": 1500,
+      "airline": "QF789",
+      "delayTime": 900
+    },
+    {
+      "departureDate": 20240110,
+      "departureTime": 1000,
+      "airline": "AA456",
+      "delayTime": 600
+    },
+    {
+      "departureDate": 20240325,
+      "departureTime": 1700,
+      "airline": "DL789",
+      "delayTime": 300
+    },
+    {
+      "departureDate": 20240608,
+      "departureTime": 1215,
+      "airline": "UA123",
+      "delayTime": 800
+    },
+    {
+      "departureDate": 20240820,
+      "departureTime": 830,
+      "airline": "LH567",
+      "delayTime": 150
+    },
+    {
+      "departureDate": 20241111,
+      "departureTime": 1545,
+      "airline": "EK890",
+      "delayTime": 700
+    },
+    {
+      "departureDate": 20250101,
+      "departureTime": 1430,
+      "airline": "SQ456",
+      "delayTime": 450
+    },
+    {
+      "departureDate": 20250315,
+      "departureTime": 2015,
+      "airline": "AF234",
+      "delayTime": 550
+    },
+    {
+      "departureDate": 20250630,
+      "departureTime": 1145,
+      "airline": "BA789",
+      "delayTime": 200
+    },
+    {
+      "departureDate": 20250920,
+      "departureTime": 930,
+      "airline": "QF123",
+      "delayTime": 350
+    },
+    {
+      "departureDate": 20251105,
+      "departureTime": 1830,
+      "airline": "CX890",
+      "delayTime": 700
+    }
+  ]
+  
