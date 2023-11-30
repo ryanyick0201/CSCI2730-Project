@@ -1,0 +1,13 @@
+[
+    { "walletAddress": "0x1234567890123456789012345678901234567890", "password": "password1" },
+    { "walletAddress": "0xabcdef1234567890abcdef1234567890abcdef12", "password": "password2" },
+    { "walletAddress": "0x9876543210987654321098765432109876543210", "password": "password3" },
+    { "walletAddress": "0x4567890123456789012345678901234567890123", "password": "password4" },
+    { "walletAddress": "0xfedcba0987654321fedcba0987654321fedcba09", "password": "password5" },
+    { "walletAddress": "0x5678901234567890123456789012345678901234", "password": "password6" },
+    { "walletAddress": "0x3210987654321098765432109876543210987654", "password": "password7" },
+    { "walletAddress": "0x6543210987654321654321098765432109876543", "password": "password8" },
+    { "walletAddress": "0xcba0987654321fedcba0987654321fedcba09876", "password": "password9" },
+    { "walletAddress": "0x8901234567890123456789012345678901234567", "password": "password10" }
+  ]
+  
