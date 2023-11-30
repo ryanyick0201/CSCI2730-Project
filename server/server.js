@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Initialize Express
 const app = express();
-const port = 3000; // Choose any port you prefer
+const port = 8000; // Choose any port you prefer
 
 // MongoDB connection string
 const mongoURI = 'mongodb://127.0.0.1:27017/CSCI2730';

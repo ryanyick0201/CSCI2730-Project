@@ -9,9 +9,7 @@
  ## TODO:
 - Create the front-end with HTML&CSS&JavaScript or ReactJs
   + Refer to interact.js, call the functions in the smart contract to perform the business logic
-- Create a MongoDB server and create a User document (`walletAddress`, `password`) and a FlightDelay document (`departureDate`, `departureTime`, `flightNumber`, `delayDuration`)
+- Create a MongoDB server and create a User document (`walletAddress`, `password`)
 - Create a backend server (with RESTful API endpoints) to 
-  + Conenct to the MongoDB server
   + POST request: Log in
   + POST requset: User registration
-  + GET request: Fetch flight delay document with the key `(departureDate, departureTime, flightNumber)`

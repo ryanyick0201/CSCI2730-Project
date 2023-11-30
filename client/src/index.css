@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+.Header {
+    width: 100%;
+    height: 63px;
+    background-color: #FFF;
+    flex-shrink: 0;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+    height: calc(100vh - 111px);
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer {
+    width: 100%;
+    height: 48px;
+    flex-shrink: 0;
+    background: #51459E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 8px 30px;
+    color: #FFF;
+    border-radius: 10px;
+    background-color: #51459E;
+    outline: none;
+    border: none;
+    font-size: 12px;
+}
+
+.footerContent {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.RegisterPage {
+    width: 90%;
+    height: 90%;
+    background-color: #FFF;
+    display: flex;
+}
+
+.RegisterPage .left {
+    flex: 1;
+    background: linear-gradient(220deg, #6060DC 32.66%, #51459E 60.61%, #805AD5 89.21%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.RegisterPage .left .row {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 44px;
+    color: #FFF;
+}
+
+.RegisterPage .left .description {
+    display: flex;
+    gap: 30px;
+    width: 60%;
+    align-items: center;
+    font-size: 34px;
+    color: #FFF;
+    text-align: center;
+}
+
+.RegisterPage .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.RegisterPage .right .title {
+    font-size: 44px;
+}
+
+.RegisterPage .right .formItem {
+    width: 30%;
+}
+
+.RegisterPage .right .formItem .label {
+    margin-bottom: 4px;
+}
+
+.RegisterPage .right .formItem input {
+    width: 100%;
+    height: 34px;
+}
+
+
+.LoginPage {
+    width: 90%;
+    height: 90%;
+    background-color: #FFF;
+    display: flex;
+}
+
+.LoginPage .left {
+    flex: 1;
+    background: linear-gradient(220deg, #6060DC 32.66%, #51459E 60.61%, #805AD5 89.21%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginPage .left .row {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 44px;
+    color: #FFF;
+}
+
+.LoginPage .left .description {
+    display: flex;
+    gap: 30px;
+    width: 60%;
+    align-items: center;
+    font-size: 34px;
+    color: #FFF;
+    text-align: center;
+}
+
+.LoginPage .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.LoginPage .right .title {
+    font-size: 44px;
+}
+
+.LoginPage .right .formItem {
+    width: 30%;
+}
+
+.formItem .label {
+    margin-bottom: 4px;
+}
+
+.formItem input {
+    width: 100%;
+    height: 34px;
+}
+
+
+.MainPage {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.MainPage .top {
+    background-color: #FFF;
+    flex: 1;
+    padding: 20px;
+}
+
+.MainPage .top table {
+    width: 100%;
+    text-align: left;
+}
+
+.MainPage .bottom {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.MainPage .bottomLeft {
+    flex: 2;
+    height: 100%;
+    background-color: #FFF;
+    padding: 20px;
+}
+
+.MainPage .bottomLeft .formContainer {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+.MainPage .bottomLeft .formContainer .formRow {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.MainPage .bottomLeft .formContainer .formRow .formItem {
+    flex: 1;
+}
+
+.MainPage .bottomRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.MainPage .bottomRight .plan {
+    padding: 30px;
+    border-radius: 25px;
+    background: linear-gradient(241deg, #6060DC 9.49%, #51459E 90.74%);
+    color: #FFF;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.plan .title {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 66.667% */
+    margin-bottom: 18px;
+}
+
+.plan .desc {
+    text-decoration: underline;
+}
+
+.plan .li {
+    margin-left: 12px;
+}
+
+
+.CheckOutPage {
+    width: 90%;
+    height: 90%;
+    background-color: #FFF;
+    padding: 20px;
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.CheckOutPage .title {
+    font-size: 44px;
+}
+
+.CheckOutPage .description {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
