@@ -1,25 +1,25 @@
 import {useState} from "react";
 
 export default () => {
-    const [data] = useState(JSON.parse(localStorage.getItem('claim') || '{}'))
+    const [data] = useState(JSON.parse(localStorage.getItem('policy') || '{}'))
     return <div className={'CheckOutPage'}>
-        <div className="title">Your claim application is completed</div>
+        <div className="title">Confirm your insurance policy</div>
         <div className="description">
             <div className="label">Policy ID</div>
             <div className="item">{
-                data.policyNumber
+                data.policyId
             }</div>
         </div>
         <div className="description">
             <div className="label">Date of departure</div>
             <div className="item">{
-                data.departureDate
+                data.date
             }</div>
         </div>
         <div className="description">
             <div className="label">Departure time</div>
             <div className="item">{
-                data.departureTime
+                data.time
             }</div>
         </div>
         <div className="description">
@@ -37,13 +37,13 @@ export default () => {
         <div className="description">
             <div className="label">Plan</div>
             <div className="item">{
-                data.policyClass ? 'Premium' : 'Basic'
+                data.plan ? 'Premium' : 'Basic'
             }</div>
         </div>
         <div className="description">
             <div className="label">Policy premium</div>
             <div className="item">{
-                data.policyClass ? '0.02' * data.numberOfPersons : '0.01' * data.numberOfPersons
+                data.plan ? '0.02' * data.numberOfPersons : '0.01' * data.numberOfPersons
             }ETH
             </div>
         </div>
@@ -51,5 +51,4 @@ export default () => {
             <button onClick={() => window.location.href = '/'}>Return</button>
         </div>
     </div>
-
 }

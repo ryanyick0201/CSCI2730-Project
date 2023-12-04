@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser'); // Add this line to parse JSON in the request body
-
+const cors = require('cors');
 
 // Initialize Express
 const app = express();
@@ -9,6 +9,7 @@ const port = 8000; // Choose any port you prefer
 
 // Add middleware to parse JSON in the request body
 app.use(bodyParser.json());
+app.use(cors());
 
 // MongoDB connection string
 const mongoURI = 'mongodb://127.0.0.1:27017/CSCI2730';

@@ -13,14 +13,14 @@ contract InsuranceContract {
     enum PolicyClass { Basic, Premium }
 
     // Hard-coded price and compensation amount
-    uint256 BASIC_PRICE = 1000000000000000; //0.001 ETH
-    uint256 PREMIUM_PRICE = 2000000000000000; //0.002 ETH
+    uint256 BASIC_PRICE = 10000000000000000; //0.01 ETH
+    uint256 PREMIUM_PRICE = 20000000000000000; //0.02 ETH
 
-    uint256 BASIC_COMPENSATION_LOW = 3000000000000000; //0.003 ETH
-    uint256 BASIC_COMPENSATION_HIGH = 7000000000000000; //0.007 ETH
+    uint256 BASIC_COMPENSATION_LOW = 30000000000000000; //0.03 ETH
+    uint256 BASIC_COMPENSATION_HIGH = 70000000000000000; //0.07 ETH
 
-    uint256 PREMIUM_COMPENSATION_LOW = 6000000000000000; //0.006 ETH
-    uint256 PREMIUM_COMPENSATION_HIGH = 15000000000000000; //0.015 ETH
+    uint256 PREMIUM_COMPENSATION_LOW = 60000000000000000; //0.06 ETH
+    uint256 PREMIUM_COMPENSATION_HIGH = 150000000000000000; //0.15 ETH
 
     // Structure to represent a policy
     struct Policy {
@@ -67,9 +67,6 @@ contract InsuranceContract {
         uint8 numberOfPersons, 
         PolicyClass policyClass
     ) external payable returns(uint256, address)  {
-        // Ensure the user profile exists
-        // require(userProfiles[msg.sender].walletAddress != address(0), "User profile not found");
-
         // Ensure correct payment amount (0.001 ETH)
         uint256 requiredAmt;
         if (policyClass == PolicyClass.Basic)

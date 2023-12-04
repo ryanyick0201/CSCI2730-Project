@@ -174,7 +174,10 @@ button {
     width: 100%;
     height: 34px;
 }
-
+.formItem select {
+    width: 100%;
+    height: 34px;
+}
 
 .MainPage {
     display: flex;
@@ -248,7 +251,6 @@ button {
     font-style: normal;
     font-weight: 400;
     line-height: 16px; /* 66.667% */
-    margin-bottom: 18px;
 }
 
 .plan .desc {
@@ -257,6 +259,9 @@ button {
 
 .plan .li {
     margin-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 

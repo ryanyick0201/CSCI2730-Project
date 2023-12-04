@@ -1,33 +1,89 @@
+import {useState} from "react";
+import useProfile from "../Hooks/profile";
+// policyId: result.policyNumber
 export default () => {
+    const {web3, address, contract} = useProfile()
 
-  return <div className={'CheckOutPage'}>
-    <div className="title">Confirm your insurance policy</div>
-    <div className="description">
-      <div className="label">Date of departure</div>
-      <div className="item">31 Dec, 2023</div>
+    const handleCheckOut = () => {
+        const form = JSON.parse(localStorage.getItem('policy') || '{}')
+        const {date, time, flightNumber, numberOfPersons, ticketPrice, plan} = form
+
+        contract && address && (async () => {
+            try {
+                console.log(`Address is ${address}, ${date}, ${time}, ${flightNumber}, ${numberOfPersons}, ${plan}`);
+                console.log('Contract:', contract);
+                console.log('Web3:', web3);
+    
+                const txObject = await contract.methods.createPolicy(
+                    date,
+                    time,
+                    flightNumber,
+                    numberOfPersons,
+                    plan,
+                )
+
+                const gas = await txObject.estimateGas({ from: address, value: web3.utils.toWei((plan === 0 ? '0.01' : '0.02') * numberOfPersons, 'ether') });
+                console.log('Estimated gas:', gas);
+
+                // Send the transaction
+		        const result = await txObject.send({
+                    from: address,
+                    gas,
+                    value: web3.utils.toWei((plan === 0 ? '0.01' : '0.02') * numberOfPersons, 'ether')
+                });
+
+                localStorage.setItem('policy', JSON.stringify({...form, policyId: result.policyNumber}))
+                window.location.href = '/confirm'
+            } catch (e) {
+                console.log(e)
+            }
+
+        })();
+    }
+
+    const [data] = useState(JSON.parse(localStorage.getItem('policy') || '{}'))
+    return <div className={'CheckOutPage'}>
+
+        <div className="title">Confirm your insurance policy</div>
+        <div className="description">
+            <div className="label">Date of departure</div>
+            <div className="item">{
+                data.date
+            }</div>
+        </div>
+        <div className="description">
+            <div className="label">Departure time</div>
+            <div className="item">{
+                data.time
+            }</div>
+        </div>
+        <div className="description">
+            <div className="label">Flight number</div>
+            <div className="item">{
+                data.flightNumber
+            }</div>
+        </div>
+        <div className="description">
+            <div className="label">Number of persons</div>
+            <div className="item">{
+                data.numberOfPersons
+            }</div>
+        </div>
+        <div className="description">
+            <div className="label">Plan</div>
+            <div className="item">{
+                data.plan ? 'Premium' : 'Basic'
+            }</div>
+        </div>
+        <div className="description">
+            <div className="label">Policy premium</div>
+            <div className="item">{
+                data.plan ? '0.02' * data.numberOfPersons : '0.01' * data.numberOfPersons
+            }ETH
+            </div>
+        </div>
+        <div className="bottom">
+            <button onClick={() => handleCheckOut()}>Confirm</button>
+        </div>
     </div>
-    <div className="description">
-      <div className="label">Departure time</div>
-      <div className="item">12:28p.m.</div>
-    </div>
-    <div className="description">
-      <div className="label">Flight number</div>
-      <div className="item">EK445</div>
-    </div>
-    <div className="description">
-      <div className="label">Number of persons</div>
-      <div className="item">1</div>
-    </div>
-    <div className="description">
-      <div className="label">Plan</div>
-      <div className="item">Basic</div>
-    </div>
-    <div className="description">
-      <div className="label">Policy premium</div>
-      <div className="item">0.01ETH</div>
-    </div>
-    <div className="bottom">
-      <button>Confirm</button>
-    </div>
-  </div>
 }

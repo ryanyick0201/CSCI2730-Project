@@ -39,6 +39,12 @@ async function interact() {
 		const finalBalance = await web3.eth.getBalance(InsuranceContract.options.address);
 		console.log('Final Contract Balance:', web3.utils.fromWei(finalBalance, 'ether'), 'ETH');
 		
+
+		// Teting zone:
+		console.log("Testing zone");
+		const result = await InsuranceContract.methods.viewPolicyByID(1).call();
+		console.log(result);
+
 	  } catch (error) {
 		console.error(error);
 	  }
