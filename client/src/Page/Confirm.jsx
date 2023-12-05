@@ -4,12 +4,12 @@ export default () => {
     const [data] = useState(JSON.parse(localStorage.getItem('policy') || '{}'))
     return <div className={'CheckOutPage'}>
         <div className="title">Confirm your insurance policy</div>
-        <div className="description">
+        {/*<div className="description">
             <div className="label">Policy ID</div>
             <div className="item">{
                 data.policyId
             }</div>
-        </div>
+        </div>*/}
         <div className="description">
             <div className="label">Date of departure</div>
             <div className="item">{
@@ -19,7 +19,9 @@ export default () => {
         <div className="description">
             <div className="label">Departure time</div>
             <div className="item">{
-                data.time
+              Number(data.time) > 1200
+                ? `${Number(data.time) - 1200} pm`
+                : `${Number(data.time)} am`
             }</div>
         </div>
         <div className="description">
