@@ -47,17 +47,33 @@ export default () => {
     window.location.href = '/checkout'
   }
 
-  const claim = async(item, isLarge) => {
+  const claim = async(item, isLarge, isValidClaim) => {
     try {
-      const result = await contract.methods.claim(
+      console.log(Number(item[0]));
+      console.log(isLarge);
+      console.log(isValidClaim);
+
+      const txObject = await contract.methods.claim(
         Number(item[0]),
         !isLarge,
         isLarge,
-        true,
-      ).send({
+        isValidClaim,
+      )
+      console.log(txObject);
+      const gas = await txObject.estimateGas({
         from: address,
+      });
+
+      console.log('Estimated gas:', gas)
+
+      // Send the transaction
+      const result = await txObject.send({
+        from: address,
+        gas,
       })
-      console.log(result)
+
+      window.location.reload();
+      window.alert("Your claim application has finished. Check the latest claim status for more detail.");
 
       localStorage.setItem('claim', JSON.stringify(item))
       window.location.href = '/complete'
@@ -71,15 +87,18 @@ export default () => {
       const result = await fetch(`http://localhost:8000/flightDelayInfo?departureDate=${item[1]}&departureTime=${item[2]}&airline=${item[3]}`)
       const data = await result.json()
 
-      if (!data) {
-        alert('No flight found')
+      if (!data[0]) {
+        window.alert('No flight found')
         return
       } else {
-        const { delayTime } = data
+        const delayTime = data[0].delayTime
+
         if (delayTime > 600) {
-          claim(item, true)
+          claim(item, true, true)
         } else if (delayTime > 180) {
-          claim(item, false)
+          claim(item, false, true)
+        } else {
+          claim(item, false, false)
         }
       }
     } catch (error) {
@@ -106,11 +125,11 @@ export default () => {
         {policy.map((item, index) => (
           <tr key={index}>
             <td>{Number(item[0])}</td>
-            <td>{Number(item[1])}</td>
+            <td>{`${String(item[1]).substring(6, 8)}-${String(item[1]).substring(4, 6)}-${String(item[1]).substring(0, 4)}`}</td>
             <td>{
               Number(item[2]) > 1200
-                ? `${Number(item[2]) - 1200} pm`
-                : `${Number(item[2])} am`
+                ? `${item[2]} pm`
+                : `${item[2]} am`
             }</td>
             <td>{item[3]}</td>
             <td>{Number(item[5]) ? 'Premium' : 'Basic'}</td>

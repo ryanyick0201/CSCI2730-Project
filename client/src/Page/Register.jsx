@@ -37,7 +37,7 @@ export default () => {
         </div>
         <div className="right">
             <div className="title">
-                Welcome
+                Welcome. New to SecureFlight?
             </div>
             <div className="formItem">
                 <div className="label">Wallet address</div>

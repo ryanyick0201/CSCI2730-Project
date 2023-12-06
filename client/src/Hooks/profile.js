@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Web3 } from 'web3'
 import contractAbi from './MyContractAbi.json'
-const contractAddress = '0xC8858B58f2f5D4C21d0F3E92f921dD3B96d74Da9';
+const contractAddress = '0xEddcd775F75D73f8564F9C5A13FB273DeDBFB49c';
 export default () => {
     const [address, setAddress] = useState(localStorage.getItem('address') || '')
     const [web3, setWeb3] = useState(null)

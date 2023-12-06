@@ -144,10 +144,7 @@ contract InsuranceContract {
 
     // Function to claim a policy
     //TODO: claim processes only when it is possible
-    function claim(uint256 policyNumber, bool isSmallDelay, bool isLargeDelay, bool isValidClaim) external {
-        // Ensure isSmallDelay xor isLargeDelay
-        require(isSmallDelay == !isLargeDelay, "It cannot be both/neither small and/nor large delay");
-        
+    function claim(uint256 policyNumber, bool isSmallDelay, bool isLargeDelay, bool isValidClaim) external {      
         // Ensure the account holder owns the policy
         require(msg.sender == policies[policyNumber].walletAddress, "You are not the policy holder");
 
@@ -155,7 +152,7 @@ contract InsuranceContract {
         require(policyNumber < _policyNumber, "Policy does not exist");
 
         // Ensure that the policy to be claimed is claimable
-        require(policies[policyNumber].claimStatus != ClaimStatus.Pending, "Policy cannot be claimed");
+        require(policies[policyNumber].claimStatus == ClaimStatus.Pending, "Policy cannot be claimed");
 
         if (!isValidClaim){
             policies[policyNumber].claimStatus = ClaimStatus.Unclaimable;

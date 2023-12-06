@@ -3,7 +3,7 @@ import {useState} from "react";
 export default () => {
     const [data] = useState(JSON.parse(localStorage.getItem('policy') || '{}'))
     return <div className={'CheckOutPage'}>
-        <div className="title">Confirm your insurance policy</div>
+        <div className="title">Your insurance policy application is completed </div>
         {/*<div className="description">
             <div className="label">Policy ID</div>
             <div className="item">{

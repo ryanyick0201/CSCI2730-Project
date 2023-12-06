@@ -23,6 +23,7 @@ async function interact() {
 	const defaultAccount = providersAccounts[0];
 
 	try {
+		
 		// Create the transaction object
 		const txObject = InsuranceContract.methods.injectMoney();
 	
@@ -38,12 +39,27 @@ async function interact() {
 		// Get the contract balance after the transaction
 		const finalBalance = await web3.eth.getBalance(InsuranceContract.options.address);
 		console.log('Final Contract Balance:', web3.utils.fromWei(finalBalance, 'ether'), 'ETH');
-		
 
 		// Teting zone:
-		console.log("Testing zone");
-		const result = await InsuranceContract.methods.viewPolicyByID(1).call();
-		console.log(result);
+		// console.log("Testing zone");
+		// const txObject = await InsuranceContract.methods.claim(
+		// 	1,
+		// 	true,
+		// 	false,
+		// 	true,
+		//   )
+		// //   console.log(txObject);
+		//   const gas = await txObject.estimateGas({
+		// 	from: defaultAccount,
+		//   });
+	
+		//   console.log('Estimated gas:', gas)
+	
+		//   // Send the transaction
+		//   const result = await txObject.send({
+		// 	from: defaultAccount,
+		// 	gas,
+		//   })
 
 	  } catch (error) {
 		console.error(error);

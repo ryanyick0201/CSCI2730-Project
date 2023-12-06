@@ -41,7 +41,7 @@ export default () => {
         </div>
         <div className="right">
             <div className="title">
-                Welcome
+                Welcome back
             </div>
             <div className="formItem">
                 <div className="label">Wallet address</div>
