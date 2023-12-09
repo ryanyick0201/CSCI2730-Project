@@ -6,13 +6,4 @@
 4. `node index.js`: check if everything runs smoothly up to this step.
 5. `node deploy.js`: deploy the smart contract.
 
- ## TODO:
-- Install MongoDB
-- Create the front-end with HTML&CSS&JavaScript or ReactJs
-  + Registration page
-  + Log in page
-  + The three confirmation pages
-- Refer to UML document (the docx that I mentioned)
-  + Refer to interact.js, call the functions in the smart contract to perform the business logic
-  + Refer to the API, call the function to fetch the data from MongoDB
-  + This means that you just have to follow the UML document and then finish up the interaction (click the button --> perform some functions (that I've done for you) --> redirect to another page)
+Credit: Part of the code is adopted from https://web3js.org/.
